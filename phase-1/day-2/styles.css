@@ -1,0 +1,238 @@
+/* Profile Page Styles - Modern Deep Blue Theme */
+:root {
+  --primary-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  --header-bg: rgba(20, 30, 48, 0.95);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-main: #2c3e50;
+  --text-light: #f4f4f4;
+  --accent-color: #ffd700;
+  --accent-hover: #ffea00;
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-deep: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--primary-bg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  padding-top: 140px; /* Adjusted spacing */
+  line-height: 1.6;
+  color: var(--text-light);
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header & Nav */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--text-light);
+  z-index: 1000;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+nav a {
+  padding: 8px 16px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color) !important;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  color: #1e3c72 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-light);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  /* border-bottom: 2px solid var(--accent-color); */
+  display: inline-block;
+  padding-bottom: 5px;
+  color: var(--text-light);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--text-main); /* Dark text inside cards */
+}
+
+/* Layout Containers */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.container-heading {
+  color: var(--accent-color);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Links (General) */
+a:link, a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+/* Image & Profile */
+figure {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+img {
+  display: block; /* Removes bottom gap */
+  transition: transform 0.5s ease;
+}
+
+figure:hover img {
+  transform: scale(1.03);
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Education Cards & Generic Cards */
+article {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: var(--shadow-soft);
+  color: var(--text-main);
+  border-left: 5px solid var(--accent-color);
+}
+
+article p {
+  color: var(--text-main);
+}
+
+/* Skills Grid */
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  background: var(--card-bg);
+  color: var(--text-main);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-deep);
+  border-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+/* Utilities */
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding-top: 180px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  nav a {
+    width: 80%;
+    text-align: center;
+  }
+}
